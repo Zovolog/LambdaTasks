@@ -1,0 +1,48 @@
+[
+  {
+    "name": "me",
+    "age": "27",
+    "gender": "female"
+  },
+  {
+    "name": "me",
+    "age": "28",
+    "gender": "female"
+  },
+  {
+    "name": "гу",
+    "age": "29",
+    "gender": "male"
+  },
+  {
+    "name": "mw",
+    "age": "90",
+    "gender": "male"
+  },
+  {
+    "name": "me",
+    "age": "2000",
+    "gender": "male"
+  },
+  {
+    "name": "iu",
+    "age": "2",
+    "gender": "male",
+    "nameDB": "mw"
+  },
+  {
+    "name": "io",
+    "age": "29",
+    "gender": "male"
+  },
+  {
+    "name": "y",
+    "age": "25",
+    "gender": "male"
+  },
+  {
+    "name": "me",
+    "age": "25",
+    "gender": "male"
+  }
+]
