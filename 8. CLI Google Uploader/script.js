@@ -99,7 +99,6 @@ function askForINfo() {
         message: "Would you like to short your link?: ",
         name: "shortLink",
         when(answers) {
-          console.log({ name: answers.nameOfFile });
           return answers.changeName;
         },
       },
