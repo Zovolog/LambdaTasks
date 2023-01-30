@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const tinyurl = require("tinyurl-api");
 const axios = require("axios");
 const path = require("path");
 const fs = require("fs");

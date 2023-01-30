@@ -37,7 +37,7 @@ function getSecondQuestion(words, nums) {
         words.sort(function (a, b) {
           return a.length - b.length;
         });
-        return words;
+        console.log(words);
       } else if (num == 5) {
         console.log(words);
       } else {
@@ -49,24 +49,27 @@ function getSecondQuestion(words, nums) {
 }
 
 function getQuestion() {
-  rl.question("Type your words deviding them in spaces or write exit to finish program:", (answer) => {
-    let res = [...new Set(answer.split(" "))];
-    let words = [];
-    let nums = [];
+  rl.question(
+    "Type your words deviding them in spaces or write exit to finish program:",
+    (answer) => {
+      let res = [...new Set(answer.split(" "))];
+      let words = [];
+      let nums = [];
 
-    for (let i = 0; i < res.length; i++) {
-      if (isNaN(res[i])) {
-        words.push(res[i]);
+      for (let i = 0; i < res.length; i++) {
+        if (isNaN(res[i])) {
+          words.push(res[i]);
+        } else {
+          nums.push(res[i]);
+        }
+      }
+      if (answer === `exit`) {
+        console.log(`Thx for using our service!`);
+        rl.close();
       } else {
-        nums.push(res[i]);
+        getSecondQuestion(words, nums);
       }
     }
-    if (answer === `exit`) {
-      console.log(`Thx for using our service!`);
-      rl.close();
-    } else {
-      getSecondQuestion(words, nums);
-    }
-  });
+  );
 }
 getQuestion();

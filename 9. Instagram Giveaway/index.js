@@ -8,7 +8,7 @@ function uniqueValues() {
     str += `\n${fs.readFileSync(`data/out${i}.txt`, "utf8")}`;
   }
   let arr = str.split("\n");
-  let popped = arr.pop();
+  arr.pop();
   let res = new Set(arr).size;
   return res;
 }

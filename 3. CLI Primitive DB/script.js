@@ -1,6 +1,6 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require("fs");
-const { rawListeners } = require("process");
+
 const fileRead = fs.readFileSync("file.txt", "utf8");
 
 function askForINfo() {
@@ -64,18 +64,17 @@ function askForINfo() {
     ])
     .then((answers) => {
       let data = JSON.parse(fileRead);
-      if (typeof answers["search"] == "undefined") {
-        data.push(answers);
-      }
+      typeof answers["search"] == "undefined" && data.push(answers);
+
       if (
         answers[`search`] === true &&
-        typeof answers["nameDB"] != "undefined"
+        typeof answers["nameDB"] !== "undefined"
       ) {
         let res = data.filter(
           (answer) =>
-            answer.name.toLowerCase() == answers["nameDB"].toLowerCase()
+            answer.name.toLowerCase() === answers["nameDB"].toLowerCase()
         );
-        if (res.length > 1) {
+        if (res.length >= 1) {
           console.log(res);
           process.exit();
         } else {

@@ -14,5 +14,5 @@ bot.on("message", (msg) => {
   } else {
     bot.sendMessage(chatId, `Ви написали: '${msg.text}'`);
   }
-  console.log(`Юзер ${msg.chat.first_name} написав: ${msg.text}`);
+  console.log(`Юзер ${msg.chat.id} написав: ${msg.text}`);
 });

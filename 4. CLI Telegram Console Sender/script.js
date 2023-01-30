@@ -1,8 +1,8 @@
-const program = require("commander");
+const {program} = require("commander");
 
 const TelegramBot = require("node-telegram-bot-api");
 
-const token = "token";
+const token = "5766619151:AAGKA9uJTJUFCYPjUOG4hGTap5rWIHvQVpU";
 const bot = new TelegramBot(token, { polling: false });
 
 program
@@ -11,7 +11,7 @@ program
   .argument("<message>")
   .alias("m")
   .action(function (name) {
-    bot.sendMessage(myId, name);
+    bot.sendMessage(609114632, name);
   });
 
 program
@@ -20,7 +20,7 @@ program
   .argument("<path>")
   .alias("p")
   .action(function (name) {
-    bot.sendPhoto(myId, name);
+    bot.sendPhoto(609114632, name);
   });
 
 program.parse(process.argv);

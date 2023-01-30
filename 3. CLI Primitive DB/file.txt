@@ -44,5 +44,25 @@
     "name": "me",
     "age": "25",
     "gender": "male"
+  },
+  {
+    "name": "yehor",
+    "age": "28",
+    "gender": "male"
+  },
+  {
+    "name": "he",
+    "age": "78",
+    "gender": "female"
+  },
+  {
+    "name": "kyr",
+    "age": "21",
+    "gender": "male"
+  },
+  {
+    "name": "Yehor",
+    "age": "45",
+    "gender": "male"
   }
 ]
