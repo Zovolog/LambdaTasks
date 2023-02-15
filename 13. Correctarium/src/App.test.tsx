@@ -58,9 +58,7 @@ function countingDeadline(
   return date.toLocaleString();
 }
 
-const coutingPriceAndDeadline = (text: string, value: string) => {
-  let symbols = text.replace(/\s/g, "").split("").length;
-
+const coutingPriceAndDeadline = (value: string, symbols: number) => {
   let price = 0;
 
   if (value === "Українська" || value === "Російська") {
@@ -85,7 +83,14 @@ const coutingPriceAndDeadline = (text: string, value: string) => {
     return [price, hours];
   }
 };
-test("Counting hours", () => {
-  expect(coutingPriceAndDeadline("fdsfsd", "осійська")).toStrictEqual([120, 1]);
-  expect(coutingPriceAndDeadline("fdsfsd", "Українська")).toStrictEqual([50, 1]);
+
+describe("validateValue", () => {
+  test("Counting hours", () => {
+    expect(coutingPriceAndDeadline("осійська", 4444)).toStrictEqual([
+      533.28, 14,
+    ]);
+  });
+  test("Counting hours", () => {
+    expect(coutingPriceAndDeadline("Українська", 543)).toStrictEqual([50, 1]);
+  });
 });

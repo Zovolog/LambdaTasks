@@ -1,0 +1,16 @@
+{
+  "name": "3.-cli-primitive-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "node-fetch": "^2.6.1"
+  }
+}
