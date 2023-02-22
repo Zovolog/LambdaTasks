@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+}
+input::placeholder {
+  color: black;
+}
+.row-bts {
+  width: 308px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.bt-form {
+  border: 2px solid black;
+  font-size: 24px;
+  color: black;
+  border-radius: 10px;
+  width: 140px;
+  height: 50px;
+  background-color: white;
+  cursor: pointer;
+}
