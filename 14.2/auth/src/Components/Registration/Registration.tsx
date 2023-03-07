@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Registration.css";
 
 const Regitsration: React.FC = (props) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const sendData = (e: any) => {
     e.preventDefault();
@@ -17,7 +18,12 @@ const Regitsration: React.FC = (props) => {
         password: password,
       },
     }).then(function (response) {
-      console.log(response.data);
+      if (response.data.status === "Ok") {
+        alert(`User ${login} was created successfully `);
+        navigate("/login");
+      } else {
+        alert(`User already exist`);
+      }
     });
   };
 

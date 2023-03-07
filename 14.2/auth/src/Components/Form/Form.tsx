@@ -8,17 +8,22 @@ const Form: React.FC = (props) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  
   const loginning = (e: any) => {
     e.preventDefault();
     axios({
       url: `http://142.93.134.108:1111/login?email=${login}&password=${password}`,
       method: "post",
     }).then(function (response) {
-      localStorage.setItem("access_token", response.data.body.access_token);
-      localStorage.setItem("refresh_token", response.data.body.refresh_token);
-
-      navigate("/me");
+      if (response.data.statusCode === 200) {
+        localStorage.setItem("access_token", response.data.body.access_token);
+        localStorage.setItem("refresh_token", response.data.body.refresh_token);
+        alert("Data is good! Welcome");
+        navigate("/me");
+      } else {
+        console.log(response.data);
+        alert("User wasn`t found");
+      }
     });
   };
   return (
@@ -31,10 +36,10 @@ const Form: React.FC = (props) => {
       />
       <div className="row-bts">
         <Link to={"/register"}>
-          <button className="bt-form">Sign up</button>
+          <button className="bt-form">Register</button>
         </Link>
         <button className="bt-form" onClick={loginning}>
-          Login
+          Sign In
         </button>
       </div>
     </div>

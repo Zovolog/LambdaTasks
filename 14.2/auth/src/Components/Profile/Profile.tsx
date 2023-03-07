@@ -14,8 +14,11 @@ const Profile: React.FC = (props) => {
       },
     }).then((response) => {
       if (response.data.body.message === "token expired") {
+        setIsLoading(true);
         localStorage.setItem("status", response.data.body.message);
+        const token = localStorage.getItem("access_token");
       }
+      localStorage.setItem("status", response.data.body.message);
       setIsLoading(false);
       console.log(response.data);
     });
